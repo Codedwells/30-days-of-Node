@@ -1,0 +1,2 @@
+Hello there, this is a file that is being
+tested for file reading in node js.

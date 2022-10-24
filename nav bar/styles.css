@@ -1,0 +1,104 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0px;
+  background-color: rgb(110, 149, 170);
+}
+.logo {
+  font-size: 40px;
+  font-weight: 700;
+  color: white;
+  line-height: 80px;
+  margin: 0px 20px;
+}
+ul li {
+  list-style: none;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0px 10px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  margin-right: 5px;
+}
+.active,
+ul li:hover {
+  border: 2px solid white;
+}
+
+.list {
+  flex-direction: row;
+  float: right;
+  margin-left: 0px;
+  padding: 0px;
+}
+nav {
+  height: 80px;
+  width: 100%;
+  background-color: rgb(37, 78, 101);
+}
+li a {
+  color: bisque;
+  text-decoration: none;
+  line-height: 50px;
+  text-transform: uppercase;
+}
+nav .btn {
+  background-color: transparent;
+  border: none;
+  font-size: 34px;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 900;
+  float: right;
+  display: inline;
+  display: none;
+}
+nav .btn:active {
+  opacity: 0.6;
+}
+.console {
+  background-color: white;
+  height: 500px;
+  border-radius: 20px;
+  margin: 15px;
+}
+#console-paragraph {
+  padding: 10px;
+  color: aliceblue;
+}
+@media (max-width: 700px) {
+  nav li {
+    float: none;
+    top: 80px;
+    display: block;
+    padding: 0px;
+    padding-left: 12px;
+    margin-top: 40px; 
+  }
+  .list {
+    background-color: rgb(27, 67, 62);
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    top: 80px;
+    position: absolute;
+    z-index: 40;
+    right: 100%;
+    transition: all 0.5s;
+  }
+  .is-active {
+    right: 0px;
+  }
+  .active,
+  ul li:hover {
+    border: 2px solid transparent;
+  }
+  ul li:active {
+    opacity: 0.8;
+    background-color: rgb(52, 110, 103);
+  }
+  nav .btn {
+    margin-top: 15px;
+    margin-right: 23px;
+    display: inline-block;
+  }
+}
