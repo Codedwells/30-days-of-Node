@@ -15,7 +15,7 @@ const logic = readFileSync("./nav bar/script.js", "utf-8");
 // express.put
 // express.all
 // express.delete
-// express.use
+// express.use  ---used when a small application is made
 // express.listen
 
 app.get("/", (req, res) => {
