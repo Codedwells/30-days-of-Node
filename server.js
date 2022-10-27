@@ -1,14 +1,14 @@
-// There are several methods we can access
-// GET POST PUT DELETE
 const express = require("express");
 const app = express();
-const people = require("./express/people");
+const { readFileSync } = require("fs");
+const jdata =readFileSync("./mock-server/response.json",'utf-8')
 
-//GET
+const PORT = 8000;
+
 app.get("/", (req, res) => {
-	res.status(200).json({status:"success",data:people});
+	res.send(jdata);
 });
 
-app.listen(5000, (req, res) => {
-	console.log("The server is running....");
+app.listen(PORT, (req, res) => {
+	console.log(`Server running on port ${PORT}`);
 });
