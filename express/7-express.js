@@ -8,7 +8,16 @@ const authorize = require("./express/middleware2");
 const logger = require("./express/middleware1");
 
 // Using more than one middleware
+//The use(middleware) always comes before the other routes
 app.use([logger, authorize]);
+
+//When you add a route as shown below any route after the
+//indicated route will use the middleware
+app.use('/about',logger)
+
+app.get('/about/me',(req,res)=>{
+	res.send("About me section...")
+})
 
 app.get("/", (req, res) => {
 	res.send("You are authorized...");
