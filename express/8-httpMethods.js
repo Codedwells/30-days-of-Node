@@ -1,3 +1,4 @@
+/// Here we learn about all common http methods
 const express = require("express");
 const app = express();
 const people = require("./express/people");
@@ -37,21 +38,35 @@ app.post("/api/data", (req, res) => {
 app.put("/api/people/:id", (req, res) => {
 	const { names } = req.body;
 	const { id } = req.params;
-    console.log(people);
 
-	for(let curr of people){
-		var newPeople = people;
-		if (curr.id == Number(id)) {
-			newPeople[people.indexOf(curr)].name = names;
-			res.status(200).send(newPeople);
-		}
-		return res.status(201).send(`${id} was not found`);
-    }
+	let newPeople = [...people];
+
+	if (newPeople.length < id) {
+		return res.status(200).send(`We did not find ${names} of id ${id}`);
+	}
+	var elem = newPeople.filter((curr) => curr.id == id);
+	var index = newPeople.indexOf(elem[0]);
+	elem[0].name = names;
+	var currObj = elem[0];
+	newPeople[index] = currObj;
+	res.status(200).json(newPeople);
+
 	// console.log(names, id);
 	// res.status(200).send(`We got ${names} and his id is ${id}`);
 });
 
 //----------------DELETE method--------------------
+// this method is used to  remove something from the data base
+
+app.delete("/api/people/:id", (req, res) => {
+	const included = people.find((curr) => curr.id == req.params.id);
+	if (included) {
+		var newPeoples = people.filter((curr) => curr.id !== Number(req.params.id));
+		return res.status(200).json(newPeoples);
+	} else {
+		res.status(404).send("The person was not found");
+	}
+});
 
 //Server listening
 app.listen(5000, (req, res) => {

@@ -3,7 +3,7 @@
 const express = require("express");
 const app = express();
 
-//Middleware it has to be passed to the next middleware
+//Middleware has to be passed to the next middleware
 //and if not it must be terminated res.end(.....) to avoid
 // un necessary reload use next() no params
 const logger = (req, res, next) => {
