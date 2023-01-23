@@ -1,5 +1,5 @@
 //-----------------------------WELCOME TO LEARN NODE IN THIRTY DAYS------------------------------
-//This is a curriculum based on an eight hour Node.js course which also includes express.js
+//This is a curriculum based on Node.js and also includes express.js
 //Through the thirty days we will be learning NodeJs I personally made this while learning
 //Follow the numbering before each file name to get synced progress
 //------------------------------LETS LEARN NODE JS-----------------------------------------------
