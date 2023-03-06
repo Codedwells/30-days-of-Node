@@ -2,7 +2,7 @@
 // on--which adds the listener  emit--which emits the event
 //With events the on and emitter must follow a spcific order
 //Multiple on listerners can be added.
-//----Params can also be included
+//----Params can also be included 
 //events module returns a class hence the new Key Word
 
 const EventEmitter = require("events");
